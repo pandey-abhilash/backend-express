@@ -1,0 +1,24 @@
+{
+  "name": "backend-express",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./server/bin/www",
+    "server": "nodemon --exec babel-node ./server/bin/www",
+    "dev": "NODE_ENV=development npm-run-all server"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.3",
+    "rimraf": "^3.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6"
+  }
+}
