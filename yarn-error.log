@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn run dev
+  /usr/local/bin/node /usr/local/bin/yarn add @hapi/joi
 
 PATH: 
   /home/reverie-pc/bin:/home/reverie-pc/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -14,12 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  SyntaxError: /home/reverie-pc/Documents/myproject/assignment2/backend-express/package.json: Unexpected token / in JSON at position 91
-      at JSON.parse (<anonymous>)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:1625:59
-      at Generator.next (<anonymous>)
-      at step (/usr/local/lib/node_modules/yarn/lib/cli.js:304:30)
-      at /usr/local/lib/node_modules/yarn/lib/cli.js:315:13
+  Error: EACCES: permission denied, mkdir '/home/reverie-pc/Documents/myproject/backend-express/node_modules/ansi-align/node_modules/ansi-regex'
 
 npm manifest: 
   {
@@ -27,9 +22,8 @@ npm manifest:
     "version": "0.0.0",
     "private": true,
     "scripts": {
-      // "start": "nodemon --exec babel -node ./server/app.js"
-      "start": "node ./server/bin/www",
-      "server": "babel-node ./server/bin/www",
+      "server": "babel-node ./server/www",
+      "start": "nodemon --exec babel-node ./server/www",
       "dev": "NODE_ENV=development npm-run-all server"
     },
     "dependencies": {
@@ -44,7 +38,8 @@ npm manifest:
       "@babel/cli": "^7.8.4",
       "@babel/core": "^7.9.6",
       "@babel/node": "^7.8.7",
-      "@babel/preset-env": "^7.9.6"
+      "@babel/preset-env": "^7.9.6",
+      "body-parser": "^1.19.0"
     }
   }
 

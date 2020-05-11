@@ -1,10 +1,18 @@
 import express from 'express';
+
+import user from '../validations/user'
 var router = express.Router();
-// ..stuff below
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.json({ title: 'user' });
+router.post('/register', function(req, res, next) {
+  const {error} = user.registerValidation(req.body)
+  if(error){res.status(400).send(error.details[0].message)}
+  try {
+    res.json({ title: 'user' });
+  } catch (error) {
+    res.status(400).send(error)
+  }
+
 });
 
 export default router;
